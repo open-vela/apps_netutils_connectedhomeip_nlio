@@ -15,7 +15,8 @@
 @SET_MAKE@
 
 #
-#    Copyright 2015-2016 Nest Labs Inc. All Rights Reserved.
+#    Copyright (c) 2020 Project nlio Authors
+#    Copyright (c) 2015-2016 Nest Labs Inc. All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -532,6 +533,7 @@ MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 NLUNIT_TEST_CPPFLAGS = @NLUNIT_TEST_CPPFLAGS@
+NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY = @NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY@
 NLUNIT_TEST_LDFLAGS = @NLUNIT_TEST_LDFLAGS@
 NLUNIT_TEST_LIBS = @NLUNIT_TEST_LIBS@
 NLUNIT_TEST_SUBDIRS = @NLUNIT_TEST_SUBDIRS@
@@ -678,6 +680,14 @@ EXTRA_DIST = \
 @NLIO_BUILD_TESTS_TRUE@nlio_test_SOURCES = nlio-test.c                 
 @NLIO_BUILD_TESTS_TRUE@nlio_test_cxx_LDADD = $(COMMON_LDADD)
 @NLIO_BUILD_TESTS_TRUE@nlio_test_cxx_SOURCES = nlio-test-cxx.cpp           
+
+#
+# Foreign make dependencies
+#
+@NLIO_BUILD_TESTS_TRUE@NLFOREIGN_SUBDIR_DEPENDENCIES = \
+@NLIO_BUILD_TESTS_TRUE@   $(NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY)      \
+@NLIO_BUILD_TESTS_TRUE@   $(NULL)
+
 @NLIO_BUILD_COVERAGE_TRUE@@NLIO_BUILD_TESTS_TRUE@CLEANFILES = $(wildcard *.gcda *.gcno)
 
 # The bundle should positively be qualified with the absolute build
