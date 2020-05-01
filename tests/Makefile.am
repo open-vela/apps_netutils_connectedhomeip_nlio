@@ -1,5 +1,6 @@
 #
-#    Copyright 2015-2016 Nest Labs Inc. All Rights Reserved.
+#    Copyright (c) 2020 Project nlio Authors
+#    Copyright (c) 2015-2016 Nest Labs Inc. All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -92,6 +93,14 @@ nlio_test_SOURCES                              = nlio-test.c
 
 nlio_test_cxx_LDADD                            = $(COMMON_LDADD)
 nlio_test_cxx_SOURCES                          = nlio-test-cxx.cpp           
+
+#
+# Foreign make dependencies
+#
+
+NLFOREIGN_SUBDIR_DEPENDENCIES                  = \
+   $(NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY)      \
+   $(NULL)
 
 if NLIO_BUILD_COVERAGE
 CLEANFILES                                     = $(wildcard *.gcda *.gcno)
