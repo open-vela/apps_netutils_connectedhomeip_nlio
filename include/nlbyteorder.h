@@ -1,4 +1,5 @@
 /**
+ *    Copyright (c) 2020 nlio Authors. All Rights Reserved.
  *    Copyright 2012-2017 Nest Labs Inc. All Rights Reserved.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
@@ -177,14 +178,20 @@ extern "C" {
  *       - NLBYTEORDER_UNKNOWN_ENDIAN
  *
  */
-#if defined(__LITTLE_ENDIAN) || defined(__LITTLE_ENDIAN__) || (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
+#if defined(__BYTE_ORDER__)
+# if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+#  define NLBYTEORDER NLBYTEORDER_LITTLE_ENDIAN
+# elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+#  define NLBYTEORDER NLBYTEORDER_BIG_ENDIAN
+# endif /* __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__ */
+#elif defined(__LITTLE_ENDIAN__) && (__LITTLE_ENDIAN__ == 1)
 #define NLBYTEORDER NLBYTEORDER_LITTLE_ENDIAN
-#elif defined(__BIG_ENDIAN) || defined(__BIG_ENDIAN__) || (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+#elif defined(__BIG_ENDIAN__) && (__BIG_ENDIAN__ == 1)
 #define NLBYTEORDER NLBYTEORDER_BIG_ENDIAN
 #else
 #error "Endianness undefined!"
 #define NLBYTEORDER NLBYTEORDER_UNKNOWN_ENDIAN
-#endif /* defined(__LITTLE_ENDIAN) || defined(__LITTLE_ENDIAN__) || (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) */
+#endif /* defined(__BYTE_ORDER__) */
 
 enum {
     nlByteOrderUnknown	    = NLBYTEORDER_UNKNOWN_ENDIAN,
