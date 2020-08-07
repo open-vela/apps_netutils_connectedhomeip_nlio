@@ -1,3 +1,12 @@
+1.1.9 (2020-08-06)
+
+        * Address an issue with preprocessor endianness detection and
+          setting NLBYTEORDER that always led defaulting to
+          NLBYTEORDER_LITTLE_ENDIAN.
+
+        * Address an issue with nlByteOrderSwap16LittleToHost when
+          NLBYTEORDER is set to NLBYTEORDER_BIG_ENDIAN.
+
 1.1.8 (2020-05-11)
 
         * Updated to nlbuild-autotools 1.7.3.
