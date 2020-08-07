@@ -1,4 +1,5 @@
 /**
+ *    Copyright (c) 2020 nlio Authors. All Rights Reserved.
  *    Copyright 2012-2016 Nest Labs Inc. All Rights Reserved.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +42,7 @@
  */
 static inline uint16_t nlByteOrderSwap16LittleToHost(uint16_t inValue)
 {
-    return nlByteOrderSwap16(inValue);
+    return nlByteOrderValueSwap16(inValue);
 }
 
 /**
