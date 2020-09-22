@@ -913,10 +913,10 @@ static inline void     WriteUnaligned64(void *&p, uint64_t v)
     IO::WriteUnaligned64(p, ByteOrder::Swap64HostToLittle(v));
 }
 
-}; // namespace LittleEndian
+} // namespace LittleEndian
 
-}; // namespace IO
+} // namespace IO
 
-}; // namespace nl
+} // namespace nl
 
 #endif // NLIO_BYTEORDER_LITTLE_HPP
