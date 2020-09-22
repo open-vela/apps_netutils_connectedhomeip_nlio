@@ -359,9 +359,9 @@ namespace nl
             return nlByteOrderSwap64HostToBig(inValue);
         }
 
-    }; // namespace ByteOrder
+    } // namespace ByteOrder
 
-}; // namespace nl
+} // namespace nl
 
 #endif // NLBYTEORDER_HPP
 

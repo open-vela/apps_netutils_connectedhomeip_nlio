@@ -1018,8 +1018,8 @@ static inline void Write64(void *&p, const uint64_t v)
     nlIOWrite64(&p, v);
 }
 
-}; // namespace IO
+} // namespace IO
 
-}; // namespace nl
+} // namespace nl
 
 #endif // NLIO_BASE_HPP
