@@ -20,8 +20,8 @@ and C++ language bindings to macros and functions for:
    reordering, to 8-, 16-, 32-, and 64-bit quantities. Functions
    both with and without pointer management are also available.
 
-[nlio-travis]: https://travis-ci.org/nestlabs/nlio
-[nlio-travis-svg]: https://travis-ci.org/nestlabs/nlio.svg?branch=master
+[nlio-travis]: https://travis-ci.com/nestlabs/nlio
+[nlio-travis-svg]: https://travis-ci.com/nestlabs/nlio.svg?branch=master
 [nlio-codecov]: https://codecov.io/gh/nestlabs/nlio
 [nlio-codecov-svg]: https://codecov.io/gh/nestlabs/nlio/branch/master/graph/badge.svg
 
